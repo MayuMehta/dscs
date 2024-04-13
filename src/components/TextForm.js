@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function TextForm() {
+export default function TextForm(props) {
     const [text,setText]=useState('');
 
     const change=(e)=>{
@@ -9,10 +9,12 @@ export default function TextForm() {
 
     const clickUpper=()=>{
         setText(text.toUpperCase());
+        props.showAlert("Changed to Upper case","success")
     }
-
+    
     const clickLower=()=>{
         setText(text.toLowerCase());
+        props.showAlert("Changed to Lower case","success")
     }
 
     const clickSpeak=()=>{
@@ -22,8 +24,8 @@ export default function TextForm() {
     }
 
   return (
-    <>
-        <div class="my-3 container min-vh-100">
+    <div className={`bg-${props.color} text-${props.textColor}`}>
+        <div class={`my-3 bg-${props.color} container min-vh-100`}>
             <h1>Enter your text to analyse</h1>
             <textarea value={text} onChange={change} class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
             <div className="my-3 d-flex flex-wrap justify-content-start gap-2">
@@ -35,8 +37,7 @@ export default function TextForm() {
                 <h2>Your text summary</h2>
                 <p>{text.split(' ').length-1} Words {text.replace(/\s+/g,'').length} and Character</p>
             </div>
-        </div>
-        
-    </>
+        </div>   
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function navbar(props) {
+export default function Navbar(props) {
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,19 +16,21 @@ export default function navbar(props) {
                 <a className="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/">About</a>
+                <a className="nav-link active" href="">About</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" href="/" tabindex="-1" aria-disabled="true">Contact</a>
               </li>
             </ul>
-            <form className="d-flex">
+            <form className="d-flex m-2">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <button onClick={props.changeMode} className="btn btn-outline-dark">{props.text}</button>
           </div>
         </div>
       </nav>
+      
     </div>
   )
 }
