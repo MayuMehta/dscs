@@ -8,7 +8,7 @@ export default function About() {
         high-quality products/services to our customers.</p>
       <p>Our mission is to make your experience with us as enjoyable and seamless as possible.</p>
       <h3>Our Story</h3>
-      <p>Founded in [Year], our company has grown from a small startup to a thriving business 
+      <p>Founded in 2024, our company has grown from a small startup to a thriving business 
         serving customers worldwide. Our journey has been fueled by our commitment to 
         innovation, customer satisfaction, and excellence in everything we do.</p>
       <h3>Our Values</h3>
@@ -24,8 +24,8 @@ export default function About() {
       {/* You can add more sections, such as testimonials, achievements, etc. */}
       <h3>Contact Us</h3>
       <p>If you have any questions, feedback, or inquiries, please don't hesitate to contact us:</p>
-      <p>Email: info@example.com</p>
-      <p>Phone: +1 (123) 456-7890</p>
+      <p>Email: mayushar8434@gmail.com</p>
+      <p>Phone: +91 7808111286</p>
     </div>
   )
 }

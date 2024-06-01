@@ -8,34 +8,53 @@ export default function TextForm(props) {
     }
 
     const clickUpper=()=>{
-        setText(text.toUpperCase());
-        props.showAlert("Changed to Upper case","success")
+        if(text===''){
+            props.showAlert("Enter text to change","warning")
+        }else{
+            setText(text.toUpperCase());
+            props.showAlert("Changed to Upper case","success")
+        } 
     }
     
     const clickLower=()=>{
-        setText(text.toLowerCase());
-        props.showAlert("Changed to Lower case","success")
+        if(text===''){
+            props.showAlert("Enter text to change","warning")
+        }else{
+            setText(text.toLowerCase());
+            props.showAlert("Changed to Lower case","success")
+        }
     }
 
     const clickSpeak=()=>{
-        var msg=new SpeechSynthesisUtterance();
-        msg.text=text;
-        window.speechSynthesis.speak(msg);
+        if(text===''){
+            props.showAlert("Enter text to speak","warning")
+        }else{
+            var msg=new SpeechSynthesisUtterance();
+            msg.text=text;
+            window.speechSynthesis.speak(msg);
+        }
     }
-
+    const clickClear=()=>{
+        if(text===''){
+            props.showAlert("Nothing to clear","warning")
+        }else{
+            setText("");
+        }
+    }
   return (
-    <div className={`bg-${props.color} text-${props.textColor}`}>
-        <div class={`my-3 bg-${props.color} container min-vh-100`}>
+    <div className={`bg-${props.color} text-${props.textColor} my-n5`}>
+        <div className={`my-3 bg-${props.color} container min-vh-100`}>
             <h1>Enter your text to analyse</h1>
-            <textarea value={text} onChange={change} class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+            <textarea value={text} onChange={change} className={`form-control bg-${props.color} text-${props.textColor}`} id="exampleFormControlTextarea1" rows="10"></textarea>
             <div className="my-3 d-flex flex-wrap justify-content-start gap-2">
                 <button className="btn btn-primary" onClick={clickUpper}>Upper Case</button>
                 <button className="btn btn-primary" onClick={clickLower}>Lower Case</button>
                 <button className="btn btn-primary" onClick={clickSpeak}>Speak</button>
+                <button className="btn btn-primary" onClick={clickClear}>Clear</button>
             </div>
             <div className="container">
                 <h2>Your text summary</h2>
-                <p>{text.split(' ').length-1} Words {text.replace(/\s+/g,'').length} and Character</p>
+                <p>{text.split(' ').length-1} Words and {text.replace(/\s+/g,'').length} Character</p>
             </div>
         </div>   
     </div>
