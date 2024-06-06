@@ -4,7 +4,8 @@ export default function TextForm(props) {
     const [text,setText]=useState('');
 
     const change=(e)=>{
-        setText(e.target.value)
+        setText(e.target.value) 
+        console.log(e);
     }
 
     const clickUpper=()=>{
@@ -12,7 +13,7 @@ export default function TextForm(props) {
             props.showAlert("Enter text to change","warning")
         }else{
             setText(text.toUpperCase());
-            props.showAlert("Changed to Upper case","success")
+            // props.showAlert("Changed to Upper case","success")
         } 
     }
     

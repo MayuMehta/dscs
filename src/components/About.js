@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function About() {
+export default function About(props) {
   return (
-    <div className='container'>
+    <div className={`container text-${props.textColor} py-3`}>
       <h2>About Us</h2>
-      <p>Welcome to our website! We are a team of passionate individuals dedicated to providing 
+      <p>Welcome to {props.title} We are a team of passionate individuals dedicated to providing 
         high-quality products/services to our customers.</p>
       <p>Our mission is to make your experience with us as enjoyable and seamless as possible.</p>
       <h3>Our Story</h3>
