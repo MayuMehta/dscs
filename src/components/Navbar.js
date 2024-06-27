@@ -23,10 +23,10 @@ export default function Navbar(props) {
                 <Link className="nav-link active" to="/contact" tabIndex="-1" aria-disabled="true">Contact</Link>
               </li>
             </ul>
-            <form className="d-flex m-2">
+            {/* <form className="d-flex m-2">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form> */}
             <button onClick={props.changeMode} className={`btn btn-outline-${props.color}`}>{props.text}</button>
           </div>
         </div>
